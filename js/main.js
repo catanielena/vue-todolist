@@ -4,19 +4,24 @@ const app = new Vue({
         todos: [
             {
                 thingToDo: 'Fare i compiti',
-                textClass: ['item__text']
+                textClass: ['item__text'],
+                d: 0
             },
             {
                 thingToDo: 'Fare la spesa',
-                textClass: ['item__text']
+                textClass: ['item__text'],
+                d: 0
             },
             {
                 thingToDo: 'Fare il bucato',
-                textClass: ['item__text']
+                textClass: ['item__text'],
+                d: 0
             }
         ],
         newTodo: '',
-        checked : []
+        checked : [],
+        inputText : document.getElementsByClassName("item__text"),
+        d: 0
     },
     methods: {
         // Add todo to todos
@@ -44,13 +49,12 @@ const app = new Vue({
                 this.todos[index].textClass.push('done');            }
         },
         edit: function(index) {
-            let input = document.getElementsByClassName("item__text");
-            if( input[index].disabled == true) {
-                input[index].disabled = false;
-            } else {
-                input[index].disabled = true
+            console.log(this.inputText);
+            if(this.inputText[index].disabled == true) {
+            this.inputText[index].disabled = false;
+            } else if(this.inputText[index].disabled == false){
+                this.inputText[index].disabled = true;  
             }
         }
-
     }
 })

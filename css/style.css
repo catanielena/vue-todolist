@@ -67,3 +67,7 @@ main {
 .list__item:hover {
     background-color: #fff;
 }
+
+.message {
+    font-weight: 700;
+}

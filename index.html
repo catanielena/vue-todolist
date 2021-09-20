@@ -25,24 +25,27 @@
                 <!-- /logo -->
                 <!-- search-bar -->
                 <div class="header__search-bar">
-                    <input type="text" name="newTodo" id="newTodo" placeholder="Nuovo Todo">
-                    <button type="button" class="btn" id="add">Aggiungi</button>
+                    <input type="text" name="newTodo" id="newTodo" placeholder="Nuovo Todo" v-model="newTodo" @keyup.enter="addTodo()">
+                    <button type="button" class="btn" id="add" @click="addTodo()">Aggiungi</button>
                 </div>
                 <!-- /search-bar -->
             </header>
             <main>
                 <!-- todo-list -->
-                <ul class="list">
-                    <li v-for="todo in todos" class="list__item">
+                <ul class="list" v-if="todos.length > 0">
+                    <li v-for="(todo, i) in todos" class="list__item" :key="i">
                         <div class="item__text">
                             {{todo}}
                         </div>
                         <div class="item__buttons">
-                            <i class="fas fa-times btn"></i>
+                            <i class="fas fa-times btn" @click="removeTodo(i)"></i>
                         </div>
                     </li>
                 </ul>
                 <!-- /todo-list -->
+                <!-- Message -->
+                <span class="message" v-else>Nothing to do</span>
+                <!-- /Message -->
             </main>
         </div>
         <!-- vue -->

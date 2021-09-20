@@ -34,10 +34,13 @@
                 <!-- todo-list -->
                 <ul class="list" v-if="todos.length > 0">
                     <li v-for="(todo, i) in todos" class="list__item" :key="i">
-                        <div class="item__text">
-                            {{todo}}
-                        </div>
+                        <label :for="i">
+                            <input type="text" :value="todo.thingToDo" :class="todo.textClass" disabled :id="i">
+                            <!-- {{todo.thingToDo}} -->
+                        </label>
                         <div class="item__buttons">
+                            <input :id="i" :value="i" type="checkbox" class="btn" v-model="checked" @click="show(i)">
+                            <i class="fas fa-edit btn" @click="edit(i)"></i>
                             <i class="fas fa-times btn" @click="removeTodo(i)"></i>
                         </div>
                     </li>

@@ -25,8 +25,12 @@ button, input {
 ul {
     list-style: none;
 }
-::placeholder {
+::placeholder{
     color: lightgray;
+}
+
+input[type="text"]:disabled {
+    color: grey;
 }
 /* header */
 header {
@@ -62,6 +66,7 @@ main {
     border-bottom: 1px solid #dadee1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .list__item:hover {
@@ -70,4 +75,25 @@ main {
 
 .message {
     font-weight: 700;
+}
+
+.item__buttons {
+    display: flex;
+    align-items: center;
+}
+.item__buttons > * {
+    margin: .2rem;
+}
+input[type=checkbox] {
+    height: .9rem;
+    width: .9rem;
+}
+
+.done {
+    text-decoration: line-through;
+}
+label input {
+    background: none;
+    border: none;
+    font-size: 1rem;
 }

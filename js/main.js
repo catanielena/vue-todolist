@@ -4,24 +4,20 @@ const app = new Vue({
         todos: [
             {
                 thingToDo: 'Fare i compiti',
-                textClass: ['item__text'],
-                d: 0
+                textClass: ['item__text']
             },
             {
                 thingToDo: 'Fare la spesa',
-                textClass: ['item__text'],
-                d: 0
+                textClass: ['item__text']
             },
             {
                 thingToDo: 'Fare il bucato',
-                textClass: ['item__text'],
-                d: 0
+                textClass: ['item__text']
             }
         ],
         newTodo: '',
         checked : [],
-        inputText : document.getElementsByClassName("item__text"),
-        d: 0
+        inputText : document.getElementsByClassName("item__text")
     },
     methods: {
         // Add todo to todos
